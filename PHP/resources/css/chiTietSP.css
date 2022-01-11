@@ -1,6 +1,4 @@
-.container{
-    /* height: 800px; */
-    /* background-color: burlywood; */
+/* .container{
     width: 80%;
     display: flex;
     flex-direction: column !important;
@@ -20,8 +18,6 @@
 .title{
     text-transform: uppercase;
     font-weight: bold;
-    /* text-align: center; */
-    /* width: 400px; */
     font-size: 25px;
 }
 .price{
@@ -37,4 +33,4 @@
 h1{
     text-align: center;
     padding-bottom: 20px;
-}
+} */

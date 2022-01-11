@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\brand;
+use App\Models\product;
 use Illuminate\Http\Request;
 
-class BrandController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class BrandController extends Controller
      */
     public function index()
     {
-                return view();
+        //
     }
-        
+
     /**
      * Show the form for creating a new resource.
      *
@@ -41,10 +41,10 @@ class BrandController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\brand  $brand
+     * @param  \App\Models\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(brand $brand)
+    public function show(product $product)
     {
         //
     }
@@ -52,10 +52,10 @@ class BrandController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\brand  $brand
+     * @param  \App\Models\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(brand $brand)
+    public function edit(product $product)
     {
         //
     }
@@ -64,10 +64,10 @@ class BrandController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\brand  $brand
+     * @param  \App\Models\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, brand $brand)
+    public function update(Request $request, product $product)
     {
         //
     }
@@ -75,10 +75,10 @@ class BrandController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\brand  $brand
+     * @param  \App\Models\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(brand $brand)
+    public function destroy(product $product)
     {
         //
     }

@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Startmin - Bootstrap Admin Theme</title>
+        <title>BU2</title>
        
         <!-- Bootstrap Core CSS -->
         <link href="../public/backend/css/bootstrap.min.css" rel="stylesheet">
@@ -26,13 +26,6 @@
 
         <!-- Custom Fonts -->
         <link href="../public/backend/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
     </head>
     <body>
 
@@ -60,7 +53,7 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <i class="fa fa-bell fa-fw"></i> <b class="caret"></b>
                         </a>
-                        <ul class="dropdown-menu dropdown-alerts">
+                        {{-- <ul class="dropdown-menu dropdown-alerts">
                             <li>
                                 <a href="#">
                                     <div>
@@ -108,13 +101,13 @@
                                     <i class="fa fa-angle-right"></i>
                                 </a>
                             </li>
-                        </ul>
+                        </ul> --}}
                     </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <i class="fa fa-user fa-fw"></i> xuannt <b class="caret"></b>
                         </a>
-                        <ul class="dropdown-menu dropdown-user">
+                        {{-- <ul class="dropdown-menu dropdown-user">
                             <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
                             </li>
                             <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
@@ -122,7 +115,7 @@
                             <li class="divider"></li>
                             <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                             </li>
-                        </ul>
+                        </ul> --}}
                     </li>
                 </ul>
                 <!-- /.navbar-top-links -->
@@ -135,7 +128,7 @@
                                     <input type="text" class="form-control" placeholder="Search...">
                                     <span class="input-group-btn">
                                         <button class="btn btn-primary" type="button">
-                                            <i class="fa fa-search"></i>
+                                            <i class="fa fa-search" style="padding: 3px;"></i>
                                         </button>
                                 </span>
                                 </div>
@@ -145,7 +138,7 @@
                                 <a href="index.html" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Danh mục sản phẩm<span class="fa arrow"></span></a>
+                                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Danh mục sản phẩm</a>
                                 <ul class="nav nav-second-level">
                                     <li>
                                         <a href="flot.html">Danh sách loại sản phẩm</a>
@@ -154,19 +147,19 @@
                                 <!-- /.nav-second-level -->
                             </li>
                             <li>
-                                <a href="tables.html"><i class="fa fa-table fa-fw"></i> Sản phẩm</a>
+                                <a href="{{URL::to('/product')}}"><i class="fa fa-table fa-fw"></i> Sản phẩm</a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="flot.html">Danh sách sản phẩm</a>
+                                        <a href="{{URL::to('/product')}}">Danh sách sản phẩm</a>
                                     </li>
                                    
                                 </ul>
                             </li>
                             <li>
-                                <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Thương hiệu</a>
+                                <a href="{{URL::to('/nhacungcap')}}"><i class="fa fa-edit fa-fw"></i> Nhà sản xuất</a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="">Danh sách thương hiệu</a>
+                                        <a href="{{URL::to('/nhacungcap')}}">Danh sách Nhà sản xuất</a>
                                     </li>
                                     
                                 </ul>
@@ -176,8 +169,8 @@
                 </div>
             </nav>
 
-            <div id="page-wrapper">
-                @yield('content');
+            <div id="page-wrapper" >
+                @yield('content')
                 <!-- /.container-fluid -->
             </div>
             <!-- /#page-wrapper -->

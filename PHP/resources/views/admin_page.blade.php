@@ -27,7 +27,7 @@
         <!-- Custom Fonts -->
         <link href="../public/backend/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     </head>
-    <body>
+    <body style="background-image: url('')">
 
         <div id="wrapper">
 
@@ -156,10 +156,10 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="{{URL::to('/nhacungcap')}}"><i class="fa fa-edit fa-fw"></i> Nhà sản xuất</a>
+                                <a href="{{URL::to('/producer')}}"><i class="fa fa-edit fa-fw"></i> Nhà sản xuất</a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="{{URL::to('/nhacungcap')}}">Danh sách Nhà sản xuất</a>
+                                        <a href="{{URL::to('/producer')}}">Danh sách Nhà sản xuất</a>
                                     </li>
                                     
                                 </ul>
@@ -169,7 +169,7 @@
                 </div>
             </nav>
 
-            <div id="page-wrapper" >
+            <div id="page-wrapper" style="background-image: url('https://www.fda.gov/files/ConsumerSubtopic_1600x900_201207_1515-pills.png'); height: 900px;">
                 @yield('content')
                 <!-- /.container-fluid -->
             </div>

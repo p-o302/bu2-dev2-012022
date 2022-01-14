@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin;
-use App\Http\Controllers\NhacungcapController;
+use App\Http\Controllers\ProducerController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +20,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('admin', [admin::class, 'index']);
-Route::get('/brand', [BrandController::class, "index"]);
-Route::get('/nhacungcap', [NhacungcapController::class, "index"]);
 Route::get('/product', [ProductController::class, "index"]);
+Route::get('/producer', [ProducerController::class, "index"])->name('producer.index');
+Route::get('/producer-create',[ProducerController::class, "create"]);
+Route::post('/producer-create', [ProducerController::class, "store"]);
+Route::get('/producer-edit',[ProducerController::class, "edit"]);
+Route::post('/producer-edit', [ProducerController::class, "store"]);
+//Route::resource('/producer',ProducerController::class);
+
+// Route::name('admin.')->prefix('xyz')->group(function() {
+
+//     Route::get('path', 'SomeController@method')->name('bar');
+
+// });

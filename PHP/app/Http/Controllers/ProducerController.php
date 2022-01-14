@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Producer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-
 class ProducerController extends Controller
 {
     public function index()
@@ -61,31 +60,32 @@ class ProducerController extends Controller
      * @param  \App\Models\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Producer $producer)
+    public function edit($producer_id)
     {
-        // $producers= Producer::find($producer_id);
+        // $user = DB::table('users')->find(3);
+        // $producers = Producer::table('producer')->find($producer_id);
         // return view('contacts.edit')->with('contacts', $contact);
         // return Redirect::route('producer.index')->with('flash_message','Producer Edited!!!');
-        return view('admin.editProducer');
+        return view('admin.editProducer')->with('producers', Producer::find($producer_id));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\producer $product
+     * @param  \App\Models\producer $producer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Producer $producer)
+    public function update(Request $request, $producer_id)
     {
         $request->validate([
             // 'title' => 'required',
             'producer_name' => 'required',
         ]);
 
-        $producer->update($request->all());
+        $producer_id->update($request->all());
 
-        return redirect()->route('producer.index')->with('flash_message','Producer updated successfully');
+        return Redirect::route('producer.index')->with('flash_message','Producer updated successfully');
     }
 
     /**
@@ -94,11 +94,10 @@ class ProducerController extends Controller
      * @param  \App\Models\Producer  $producer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Producer $producer)
+    public function destroy($producer_id)
     {
-        $producer->delete();
-
-       return redirect()->route('producer.index')
-                       ->with('flash_message','Producer deleted successfully');
+        $producers = Producer::find($producer_id);
+        Producer::destroy($producer_id);
+        return redirect('producer.index')->with('flash_message', 'Contact deleted!');
     }
 }

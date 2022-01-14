@@ -18,18 +18,33 @@
             </ul>
         </div>
     @endif
-        <form action="{{ URL::to('producer-edit/'.$producer->id) }}" method="post">
+
+
+
+        <form action="{{ route('edit'),$producers->id) }}" method="post">
          @csrf
-         @method("PATCH")
+         {{-- @method("PATCH") --}}
           {{-- <label>Producer_id</label></br>
           <input type="text" name="producer_id" id="name" class="form-control"></br> --}}
           <label>Producer_name</label></br>
           {{-- <input type="text" name="producer_name" id="address" class="form-control"></br> --}}
-          <input type="text" name="producer_name" id="name" value="{{$producer->name}}" class="form-control"></br>
+          <input type="text" name="producer_name" id="name" value="{{$producers->name}}" class="form-control"></br>
          
           <input type="submit" value="Save" class="btn btn-success"></br>
       </form>
     
+
+
+
+      <form action="{{ URL::to('producer-create') }}" method="post">
+        @csrf
+         {{-- <label>Producer_id</label></br>
+         <input type="text" name="producer_id" id="name" class="form-control"></br> --}}
+         <label>Producer_name</label></br>
+         <input type="text" name="producer_name" id="address" class="form-control"></br>
+        
+         <input type="submit" value="Save" class="btn btn-success"></br>
+     </form>
     </div>
   </div>
 

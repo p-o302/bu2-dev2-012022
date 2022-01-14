@@ -34,14 +34,19 @@
                         {{-- {{-- <td>Otto</td> --}}
                         <td style="border-bottom: 1px solid #000;">{{ $producer->producer_name }}</td>
                         <td class="btn-table" style="border-bottom: 1px solid #000;"><a
-                                href="{{ url('/producer-edit',$producer->id) }}" title="Edit Producer"><button
+                                href="{{ url('/producer-edit/'.$producer->producer_id) }}" title="Edit Producer"><button
                                     class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                     Edit</button></a>&nbsp;
-
-                            @csrf
-                            @method('DELETE')
-
-                            <button type="submit" class="btn btn-danger">Xóa</button>
+                          {{-- {{dd($producer->producer_id)}} --}}
+                            {{-- <form method="POST" action="{{ url('/producer' . '/' . $producer->id) }}"
+                                accept-charset="UTF-8" style="display:inline">
+                                {{ method_field('DELETE') }}
+                                {{ csrf_field() }}
+                                <button type="submit" class="btn btn-danger btn-sm" title="Delete Contact"
+                                    onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o"
+                                        aria-hidden="true"></i> Delete</button>
+                            </form> --}}
+                            <a href="{{url('/producer-delete/'.$producer->producer_id)}}">Delete</a>
                         </td>
                     </tr>
                 @endforeach

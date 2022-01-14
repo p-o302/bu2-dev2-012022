@@ -24,10 +24,10 @@ Route::get('/product', [ProductController::class, "index"]);
 Route::get('/producer', [ProducerController::class, "index"])->name('producer.index');
 Route::get('/producer-create',[ProducerController::class, "create"]);
 Route::post('/producer-create', [ProducerController::class, "store"]);
-Route::get('/producer-edit',[ProducerController::class, "edit"]);
-Route::post('/producer-edit', [ProducerController::class, "store"]);
-//Route::resource('/producer',ProducerController::class);
+Route::post('/producer-delete/{producer_id}', [ProductController::class],"destroy");
+Route::get('/producer-edit/edit/{producer_id}',  [ProductController::class],"edit")->name('edit');
 
+//Route::post('/producer-delete',[ProducerController::class,"store"]);
 // Route::name('admin.')->prefix('xyz')->group(function() {
 
 //     Route::get('path', 'SomeController@method')->name('bar');
